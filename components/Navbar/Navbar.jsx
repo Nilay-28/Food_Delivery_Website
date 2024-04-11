@@ -3,9 +3,10 @@ import './Navbar.css'
 import { assets} from '../../assets/assets'
 import { Link } from 'react-router-dom'
 import { StoreContext } from '../../context/StoreContext'
+import { useNavigate } from 'react-router-dom'
+import { set } from 'firebase/database'
 
 const Navbar = ({setShowLogin}) => {
-
     const [navMenu, setnavMenu] = useState('home');
 
     const {getTotalCartAmount} = useContext(StoreContext)
@@ -26,7 +27,7 @@ const Navbar = ({setShowLogin}) => {
                 <div className={getTotalCartAmount()===0?"":"dot"}>
                 </div>
             </div>
-            <a href='#'><button onClick={() => setShowLogin(true)} className="signIn">Sign In</button></a>
+            <Link to='/login'> <button onClick={() => setShowLogin(True)} className="signIn">Sign In</button> </Link>
         </div>
     </div>
   )

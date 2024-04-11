@@ -4,7 +4,7 @@ import LoginPage from '../../components/LoginPage/LoginPage'
 
 const Login = () => {
   return (
-    <div className='Login'>
+    <div className='Login' id='Login'>
         <LoginPage />
     </div>
   )
